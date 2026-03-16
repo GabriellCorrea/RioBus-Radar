@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react"
 import { MapContainer, TileLayer, Polyline, CircleMarker, useMap, Tooltip, Marker } from "react-leaflet"
 import L from "leaflet"
-import { Bus, Gauge, Clock, ClockArrowUp } from "lucide-react"
+import { Bus, Gauge, Clock, ClockArrowUp, Search } from "lucide-react"
 import "leaflet/dist/leaflet.css"
 import "./App.css"
 
@@ -65,6 +65,7 @@ function App() {
   const [fim, setFim] = useState("")
   const [fitTrigger, setFitTrigger] = useState(0)
   const coresRef = useRef({})
+  const [onibusCarregados, setOnibusCarregados] = useState(false)
 
   async function carregarLinhas() {
 
@@ -96,6 +97,8 @@ function App() {
       setDadosFiltrados(filtrados)
 
     }
+
+    setOnibusCarregados(true)
 
   }
 
@@ -227,6 +230,15 @@ function App() {
 
 <div className="layout">
 
+  {!onibusCarregados && (
+    <div className="loading-overlay">
+      <div className="loading-box">
+        <div className="spinner"></div>
+        <p>Inicializando servidor...</p>
+      </div>
+    </div>
+  )}
+
 {/* SIDEBAR */}
 
 <div className="sidebar">
@@ -267,10 +279,10 @@ function App() {
     }}
   />
 
-    <button onClick={()=>buscarLinha()}>
+    <button onClick={()=>buscarLinha()} className="botao-buscar">
+      <Search size={16}/>
       Buscar no mapa
     </button>
-
   </div>
 
 
