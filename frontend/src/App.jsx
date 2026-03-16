@@ -68,7 +68,7 @@ function App() {
 
   async function carregarLinhas() {
 
-    const res = await fetch("http://127.0.0.1:8000/linhas")
+    const res = await fetch("https://riobusradar-api.onrender.com/linhas")
     const json = await res.json()
 
     setLinhas(json)
@@ -77,7 +77,7 @@ function App() {
 
   async function carregarOnibus() {
 
-    const res = await fetch("http://127.0.0.1:8000/onibus")
+    const res = await fetch("https://riobusradar-api.onrender.com/onibus")
     const json = await res.json()
 
     setDados(json.dados)
