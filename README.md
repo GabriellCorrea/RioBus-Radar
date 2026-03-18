@@ -9,7 +9,7 @@ O sistema coleta dados de GPS dos ônibus, processa essas informações no backe
 ## 🔗 Links do Projeto
 
 **Frontend:**
-https://onibus-rio.vercel.app
+https://riobus-radar.vercel.app/
 
 **API:**
 https://riobusradar-api.onrender.com
