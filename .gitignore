@@ -1,0 +1,13 @@
+# Ambiente virtual Python
+venv/
+__pycache__/
+*.pyc
+
+# Configurações locais
+.vscode/
+
+# Node
+node_modules/
+
+# Outros
+.env
